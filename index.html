@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Para Ti 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+            max-width: 700px;
+            width: 100%;
+            animation: fadeIn 1s ease-in;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: clamp(2em, 5vw, 3.5em);
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+            text-shadow: 0 2px 4px rgba(233, 30, 99, 0.2);
+            letter-spacing: 1px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .message {
+            color: #333;
+            font-size: clamp(1em, 3vw, 1.3em);
+            margin-bottom: 35px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* GIF STYLES */
+        .gif-sonrisa {
+            width: clamp(150px, 40vw, 300px);
+            height: auto;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: flotar-gif 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .gif-sonrisa:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes flotar-gif {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Ramo de flores mejorado */
+        .ramo {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: clamp(10px, 5vw, 30px);
+            margin: 50px 0 40px 0;
+            height: clamp(200px, 40vh, 350px);
+            perspective: 1000px;
+        }
+
+        .flor {
+            position: relative;
+            width: clamp(50px, 12vw, 90px);
+            height: clamp(120px, 30vh, 250px);
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+            transform-style: preserve-3d;
+            animation: balancearse 4s ease-in-out infinite;
+        }
+
+        .flor:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .flor:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes balancearse {
+            0%, 100% {
+                transform: rotateZ(-2deg) rotateX(0deg);
+            }
+            50% {
+                transform: rotateZ(2deg) rotateX(5deg);
+            }
+        }
+
+        /* Pétalos mejorados */
+        .petalo {
+            position: absolute;
+            bottom: 35%;
+            left: 50%;
+            transform-origin: center 80%;
+            animation: florecer 3s ease-in-out infinite;
+        }
+
+        .petalo svg {
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Flor 1 - Rosa fuerte */
+        .flor1 .petalo:nth-child(1) {
+            animation-delay: 0s;
+            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        }
+
+        .flor1 .petalo:nth-child(2) {
+            animation-delay: 0.15s;
+            transform: translateX(-50%) translateY(-50%) rotate(72deg);
+        }
+
+        .flor1 .petalo:nth-child(3) {
+            animation-delay: 0.3s;
+            transform: translateX(-50%) translateY(-50%) rotate(144deg);
+        }
+
+        .flor1 .petalo:nth-child(4) {
+            animation-delay: 0.45s;
+            transform: translateX(-50%) translateY(-50%) rotate(216deg);
+        }
+
+        .flor1 .petalo:nth-child(5) {
+            animation-delay: 0.6s;
+            transform: translateX(-50%) translateY(-50%) rotate(288deg);
+        }
+
+        /* Flor 2 - Rosa claro */
+        .flor2 .petalo:nth-child(1) {
+            animation-delay: 0.1s;
+            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        }
+
+        .flor2 .petalo:nth-child(2) {
+            animation-delay: 0.25s;
+            transform: translateX(-50%) translateY(-50%) rotate(72deg);
+        }
+
+        .flor2 .petalo:nth-child(3) {
+            animation-delay: 0.4s;
+            transform: translateX(-50%) translateY(-50%) rotate(144deg);
+        }
+
+        .flor2 .petalo:nth-child(4) {
+            animation-delay: 0.55s;
+            transform: translateX(-50%) translateY(-50%) rotate(216deg);
+        }
+
+        .flor2 .petalo:nth-child(5) {
+            animation-delay: 0.7s;
+            transform: translateX(-50%) translateY(-50%) rotate(288deg);
+        }
+
+        /* Flor 3 - Púrpura */
+        .flor3 .petalo:nth-child(1) {
+            animation-delay: 0.2s;
+            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        }
+
+        .flor3 .petalo:nth-child(2) {
+            animation-delay: 0.35s;
+            transform: translateX(-50%) translateY(-50%) rotate(72deg);
+        }
+
+        .flor3 .petalo:nth-child(3) {
+            animation-delay: 0.5s;
+            transform: translateX(-50%) translateY(-50%) rotate(144deg);
+        }
+
+        .flor3 .petalo:nth-child(4) {
+            animation-delay: 0.65s;
+            transform: translateX(-50%) translateY(-50%) rotate(216deg);
+        }
+
+        .flor3 .petalo:nth-child(5) {
+            animation-delay: 0.8s;
+            transform: translateX(-50%) translateY(-50%) rotate(288deg);
+        }
+
+        @keyframes florecer {
+            0% {
+                opacity: 0.6;
+                filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+            }
+            50% {
+                opacity: 1;
+                filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+            }
+            100% {
+                opacity: 0.6;
+                filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+            }
+        }
+
+        /* Centro de la flor */
+        .centro {
+            position: absolute;
+            width: clamp(12px, 3vw, 20px);
+            height: clamp(12px, 3vw, 20px);
+            background: radial-gradient(circle at 30% 30%, #ffeb3b, #fdd835);
+            border-radius: 50%;
+            bottom: 35%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 10;
+            box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: girar 8s linear infinite;
+        }
+
+        @keyframes girar {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Tallo mejorado */
+        .tallo {
+            position: absolute;
+            width: clamp(2px, 0.5vw, 4px);
+            height: 100%;
+            background: linear-gradient(to top, #1b5e20, #2e7d32, #4caf50);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .hoja {
+            position: absolute;
+            width: clamp(15px, 4vw, 25px);
+            height: clamp(25px, 6vw, 45px);
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            border-radius: 50% 0;
+            left: clamp(2px, 0.5vw, 4px);
+            bottom: 50%;
+            animation: moverHoja 4s ease-in-out infinite;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+        }
+
+        .hoja:nth-child(2) {
+            left: clamp(2px, 0.5vw, 4px);
+            animation-delay: 0.5s;
+        }
+
+        .hoja:nth-child(3) {
+            left: auto;
+            right: clamp(2px, 0.5vw, 4px);
+            border-radius: 0 50%;
+            animation-delay: 1s;
+        }
+
+        @keyframes moverHoja {
+            0%, 100% {
+                transform: rotateZ(0deg);
+            }
+            50% {
+                transform: rotateZ(15deg);
+            }
+        }
+
+        /* Flores flotantes */
+        .flores-flotantes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .flor-flotante {
+            position: absolute;
+            font-size: clamp(1.5em, 3vw, 2.5em);
+            animation: caer 12s linear infinite;
+            opacity: 0.6;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .flor-flotante:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; }
+        .flor-flotante:nth-child(2) { left: 15%; animation-duration: 14s; animation-delay: 2s; }
+        .flor-flotante:nth-child(3) { left: 25%; animation-duration: 16s; animation-delay: 4s; }
+        .flor-flotante:nth-child(4) { left: 35%; animation-duration: 13s; animation-delay: 1s; }
+        .flor-flotante:nth-child(5) { left: 50%; animation-duration: 15s; animation-delay: 3s; }
+        .flor-flotante:nth-child(6) { left: 65%; animation-duration: 14s; animation-delay: 2.5s; }
+        .flor-flotante:nth-child(7) { left: 75%; animation-duration: 13s; animation-delay: 1.5s; }
+        .flor-flotante:nth-child(8) { left: 85%; animation-duration: 15s; animation-delay: 3.5s; }
+        .flor-flotante:nth-child(9) { left: 95%; animation-duration: 14s; animation-delay: 2s; }
+
+        /* Botón mejorado */
+        button {
+            background: linear-gradient(135deg, #ff1493 0%, #e91e63 100%);
+            color: white;
+            border: none;
+            padding: clamp(12px, 3vw, 18px) clamp(30px, 8vw, 50px);
+            font-size: clamp(1em, 2.5vw, 1.3em);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.4);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(233, 30, 99, 0.6);
+        }
+
+        button:active {
+            transform: translateY(-2px);
+        }
+
+        /* Corazones */
+        .hearts {
+            position: relative;
+            height: clamp(40px, 8vw, 60px);
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(15px, 5vw, 40px);
+        }
+
+        .heart {
+            font-size: clamp(1.5em, 4vw, 3em);
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .heart:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .heart:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .signature {
+            color: #bbb;
+            font-size: clamp(0.8em, 2vw, 1em);
+            margin-top: 30px;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .message p {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Flores cayendo -->
+    <div class="flores-flotantes">
+        <div class="flor-flotante">🌹</div>
+        <div class="flor-flotante">🌸</div>
+        <div class="flor-flotante">🌺</div>
+        <div class="flor-flotante">💐</div>
+        <div class="flor-flotante">🌹</div>
+        <div class="flor-flotante">🌼</div>
+        <div class="flor-flotante">🌸</div>
+        <div class="flor-flotante">🌹</div>
+        <div class="flor-flotante">💐</div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>💕 Feliz 14 de Febrero 💕</h1>
+
+        <div class="hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+        </div>
+
+        <div class="message">
+            <p>Quería crear algo especial para ti en este día de San Valentín.</p>
+            <p>Espero que estas flores digitales te hagan sonreír y saques una hermosa sonrisa 🌹</p>
+            <!-- GIF AQUÍ -->
+            <img src="https://i.gifer.com/3lnZ.gif" alt="sonrisa" class="gif-sonrisa">
+        </div>
+
+        <!-- Ramo de flores -->
+        <div class="ramo">
+            <!-- Flor 1 - Rosa fuerte -->
+            <div class="flor flor1">
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff1493" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff4db8" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff69b4" opacity="0.9"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff85ca" opacity="0.75"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff1493" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff4db8" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff69b4" opacity="0.9"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff85ca" opacity="0.75"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff1493" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff4db8" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="centro"></div>
+                <div class="tallo">
+                    <div class="hoja"></div>
+                    <div class="hoja"></div>
+                    <div class="hoja"></div>
+                </div>
+            </div>
+
+            <!-- Flor 2 - Rosa claro -->
+            <div class="flor flor2">
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#e91e63" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#f06292" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff1493" opacity="0.9"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff4db8" opacity="0.75"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#e91e63" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#f06292" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ff1493" opacity="0.9"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ff4db8" opacity="0.75"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#e91e63" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#f06292" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="centro"></div>
+                <div class="tallo">
+                    <div class="hoja"></div>
+                    <div class="hoja"></div>
+                    <div class="hoja"></div>
+                </div>
+            </div>
+
+            <!-- Flor 3 - Púrpura -->
+            <div class="flor flor3">
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#da70d6" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#e081e8" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ba55d3" opacity="0.9"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ce93d8" opacity="0.75"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#da70d6" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#e081e8" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#ba55d3" opacity="0.9"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#ce93d8" opacity="0.75"/>
+                    </svg>
+                </div>
+                <div class="petalo">
+                    <svg viewBox="0 0 50 70" width="50" height="70">
+                        <ellipse cx="25" cy="35" rx="18" ry="28" fill="#da70d6" opacity="0.95"/>
+                        <ellipse cx="25" cy="35" rx="15" ry="24" fill="#e081e8" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="centro"></div>
+                <div class="tallo">
+                    <div class="hoja"></div>
+                    <div class="hoja"></div>
+                    <div class="hoja"></div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="mostrarMensaje()">💌 Haz clic aquí 💌</button>
+
+        <div class="signature">
+            ~ Con cariño ~
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            alert('¡Feliz dia perdon por darte tan poco a alguien que lo merece todo en la vida ! 🌹💕');
+            crearConfeti();
+        }
+
+        function crearConfeti() {
+            const colores = ['🌹', '💕', '✨', '🌸', '💐'];
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const confeti = document.createElement('div');
+                    confeti.textContent = colores[Math.floor(Math.random() * colores.length)];
+                    confeti.style.position = 'fixed';
+                    confeti.style.left = Math.random() * window.innerWidth + 'px';
+                    confeti.style.top = '-20px';
+                    confeti.style.fontSize = '2.5em';
+                    confeti.style.pointerEvents = 'none';
+                    confeti.style.zIndex = '1000';
+                    confeti.style.animation = `caer ${3 + Math.random() * 2}s linear`;
+                    document.body.appendChild(confeti);
+                    setTimeout(() => confeti.remove(), 5000);
+                }, i * 80);
+            }
+        }
+    </script>
+</body>
+</html>
